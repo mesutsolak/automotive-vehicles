@@ -33,73 +33,69 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.ApiVer
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cache", "cache", "{65864180-473F-40E4-AD66-DFA5B75D8488}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.Cache", "src\libraries\cache\AutomotiveBrands.Lib.Cache\AutomotiveBrands.Lib.Cache.csproj", "{61288A72-81F7-4126-87A3-4A20D670AF4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.Cache", "src\libraries\cache\AutomotiveBrands.Lib.Cache\AutomotiveBrands.Lib.Cache.csproj", "{61288A72-81F7-4126-87A3-4A20D670AF4D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentation", "documentation", "{F176B9CC-4926-4551-B8FF-86E3AEECCFB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.Documentation", "src\libraries\documentation\AutomotiveBrands.Lib.Documentation\AutomotiveBrands.Lib.Documentation.csproj", "{7EF2B700-1673-420C-B20B-4C71592077A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.Documentation", "src\libraries\documentation\AutomotiveBrands.Lib.Documentation\AutomotiveBrands.Lib.Documentation.csproj", "{7EF2B700-1673-420C-B20B-4C71592077A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "healthcheck", "healthcheck", "{63284690-977C-471A-A352-6110B0AEDBB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.HealthCheck", "src\libraries\healthcheck\AutomotiveBrands.Lib.HealthCheck\AutomotiveBrands.Lib.HealthCheck.csproj", "{45C3E48D-8427-4A76-B1B3-649C6DEE0945}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.HealthCheck", "src\libraries\healthcheck\AutomotiveBrands.Lib.HealthCheck\AutomotiveBrands.Lib.HealthCheck.csproj", "{45C3E48D-8427-4A76-B1B3-649C6DEE0945}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "host", "host", "{0EE5119A-ECF9-4DAC-AFC3-C8873D261312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.Host", "src\libraries\host\AutomotiveBrands.Lib.Host\AutomotiveBrands.Lib.Host.csproj", "{1DDF607A-909D-4B96-A144-7B1004BAAC99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.Host", "src\libraries\host\AutomotiveBrands.Lib.Host\AutomotiveBrands.Lib.Host.csproj", "{1DDF607A-909D-4B96-A144-7B1004BAAC99}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "performance", "performance", "{CFDDA568-17CC-4F3D-BA81-26A492BF49F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.Performance", "src\libraries\host\AutomotiveBrands.Lib.Performance\AutomotiveBrands.Lib.Performance.csproj", "{BAB1B8AF-6ECF-439D-9781-AE031AD13BCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.Performance", "src\libraries\host\AutomotiveBrands.Lib.Performance\AutomotiveBrands.Lib.Performance.csproj", "{BAB1B8AF-6ECF-439D-9781-AE031AD13BCC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "response", "response", "{3B430BB2-BF9D-42F0-B026-0746E4B9401C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.Response", "src\libraries\response\AutomotiveBrands.Lib.Response\AutomotiveBrands.Lib.Response.csproj", "{9385759E-C678-48B8-BBC4-C85FAFF10DB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.Response", "src\libraries\response\AutomotiveBrands.Lib.Response\AutomotiveBrands.Lib.Response.csproj", "{9385759E-C678-48B8-BBC4-C85FAFF10DB6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "security", "security", "{9676D59E-30E4-4E7C-B5D2-3980F027D7F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.Security", "src\libraries\security\AutomotiveBrands.Lib.Security\AutomotiveBrands.Lib.Security.csproj", "{872CCFB2-C041-443F-AC40-0B2AEB976226}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.Security", "src\libraries\security\AutomotiveBrands.Lib.Security\AutomotiveBrands.Lib.Security.csproj", "{872CCFB2-C041-443F-AC40-0B2AEB976226}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "servicebus", "servicebus", "{7372E562-C5D3-4420-B7AE-908327678AE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.MassTransit", "src\libraries\servicebus\AutomotiveLibraries.Lib.MassTransit\AutomotiveBrands.Lib.MassTransit.csproj", "{4E74E04C-3B10-4F26-A26F-81A79E842B19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.MassTransit", "src\libraries\servicebus\AutomotiveLibraries.Lib.MassTransit\AutomotiveBrands.Lib.MassTransit.csproj", "{4E74E04C-3B10-4F26-A26F-81A79E842B19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{EE927900-4F72-4C6E-9F3E-E27C09F62736}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.Shared", "src\libraries\shared\AutomotiveBrands.Lib.Shared\AutomotiveBrands.Lib.Shared.csproj", "{81926B7F-401A-46F3-BA15-016EC0C34C2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.Shared", "src\libraries\shared\AutomotiveBrands.Lib.Shared\AutomotiveBrands.Lib.Shared.csproj", "{81926B7F-401A-46F3-BA15-016EC0C34C2E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "validation", "validation", "{F2805904-AA12-4B2D-8FAD-96F174371DC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.Validation", "src\libraries\validation\AutomotiveBrands.Lib.Validation\AutomotiveBrands.Lib.Validation.csproj", "{55B80BA2-3311-47DE-9991-BD4A1A18AE73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.Validation", "src\libraries\validation\AutomotiveBrands.Lib.Validation\AutomotiveBrands.Lib.Validation.csproj", "{55B80BA2-3311-47DE-9991-BD4A1A18AE73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.Logging", "src\libraries\logging\AutomotiveBrands.Lib.Logging\AutomotiveBrands.Lib.Logging.csproj", "{27815D4F-3EA3-45B4-AB33-24279A8268E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.Logging", "src\libraries\logging\AutomotiveBrands.Lib.Logging\AutomotiveBrands.Lib.Logging.csproj", "{27815D4F-3EA3-45B4-AB33-24279A8268E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logging", "logging", "{6BA04116-E593-42D0-979E-513B3BD75C67}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ratelimit", "ratelimit", "{07C0C329-B11D-4CF6-8B83-E87D98A8DB9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.RateLimit", "src\libraries\ratelimit\AutomotiveBrands.Lib.RateLimit\AutomotiveBrands.Lib.RateLimit.csproj", "{ABEE470A-A174-4907-AC86-A1C5C1033CFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.RateLimit", "src\libraries\ratelimit\AutomotiveBrands.Lib.RateLimit\AutomotiveBrands.Lib.RateLimit.csproj", "{ABEE470A-A174-4907-AC86-A1C5C1033CFD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6F952D3B-45BD-47EC-B3C8-6C4063951EFC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{3E413B6D-6DD9-4A60-86AD-EC8F893E9FB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.UserService.Test", "tests\services\user\AutomotiveBrands.UserService.Test\AutomotiveBrands.UserService.Test.csproj", "{8635FAF4-928E-46BE-A0BC-2023E4884994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.UserService.Test", "tests\services\user\AutomotiveBrands.UserService.Test\AutomotiveBrands.UserService.Test.csproj", "{8635FAF4-928E-46BE-A0BC-2023E4884994}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "user", "user", "{D621BC28-3442-4B2C-B507-A136500A8011}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vehicle", "vehicle", "{0496FE72-13CC-41EE-9FB8-1ECD7EAA9636}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.VehicleService.Test", "tests\services\vehicle\AutomotiveBrands.VehicleService.Test\AutomotiveBrands.VehicleService.Test.csproj", "{6B3F0A06-2556-4AB1-B3B2-787A87CCAF15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.VehicleService.Test", "tests\services\vehicle\AutomotiveBrands.VehicleService.Test\AutomotiveBrands.VehicleService.Test.csproj", "{6B3F0A06-2556-4AB1-B3B2-787A87CCAF15}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{D6927AFB-EF63-4C73-9810-902DAADCD6ED}"
 	ProjectSection(SolutionItems) = preProject
 		docs\DICTIONARY.md = docs\DICTIONARY.md
 		docs\PARAMETERS.md = docs\PARAMETERS.md
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mapper", "mapper", "{90D97FB2-E251-4C9F-A8E5-45EB6C2E243A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Lib.Mapper", "src\libraries\mapper\AutomotiveBrands.Lib.Mapper\AutomotiveBrands.Lib.Mapper.csproj", "{85C4C993-C374-4F4E-994D-538EEF75A813}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -183,10 +179,6 @@ Global
 		{6B3F0A06-2556-4AB1-B3B2-787A87CCAF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B3F0A06-2556-4AB1-B3B2-787A87CCAF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B3F0A06-2556-4AB1-B3B2-787A87CCAF15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{85C4C993-C374-4F4E-994D-538EEF75A813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85C4C993-C374-4F4E-994D-538EEF75A813}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85C4C993-C374-4F4E-994D-538EEF75A813}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85C4C993-C374-4F4E-994D-538EEF75A813}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -234,8 +226,6 @@ Global
 		{D621BC28-3442-4B2C-B507-A136500A8011} = {3E413B6D-6DD9-4A60-86AD-EC8F893E9FB8}
 		{0496FE72-13CC-41EE-9FB8-1ECD7EAA9636} = {3E413B6D-6DD9-4A60-86AD-EC8F893E9FB8}
 		{6B3F0A06-2556-4AB1-B3B2-787A87CCAF15} = {0496FE72-13CC-41EE-9FB8-1ECD7EAA9636}
-		{90D97FB2-E251-4C9F-A8E5-45EB6C2E243A} = {99CF4514-80C1-4C0C-8F85-E1018AD7517B}
-		{85C4C993-C374-4F4E-994D-538EEF75A813} = {90D97FB2-E251-4C9F-A8E5-45EB6C2E243A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B08CEC2-8C2E-4B55-92D5-33D07DB7F418}
