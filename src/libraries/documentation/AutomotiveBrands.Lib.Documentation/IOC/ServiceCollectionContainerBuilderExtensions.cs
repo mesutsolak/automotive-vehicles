@@ -61,32 +61,6 @@
 
                 var xmlFile = $"{Assembly.GetEntryAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                //options.IncludeXmlComments(xmlPath);
-
-                if (isJwtSecurityScheme)
-                {
-                    OpenApiSecurityScheme jwtSecurityScheme = new()
-                    {
-                        In = ParameterLocation.Header,
-                        Name = HeaderNames.Authorization,
-                        Type = SecuritySchemeType.Http,
-                        Description = "Bearer {token}",
-                        BearerFormat = "JWT",
-                        Scheme = "bearer",
-                        Reference = new()
-                        {
-                            Id = JwtBearerDefaults.AuthenticationScheme,
-                            Type = ReferenceType.SecurityScheme
-
-                        }
-                    };
-
-                    options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, jwtSecurityScheme);
-                    options.AddSecurityRequirement(new()
-                    {
-                        { jwtSecurityScheme, Array.Empty<string>() }
-                    });
-                }
 
                 if (isBasicSecurityScheme)
                 {
