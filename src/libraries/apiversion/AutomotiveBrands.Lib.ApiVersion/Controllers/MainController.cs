@@ -1,4 +1,4 @@
-﻿namespace AutomotiveAPI.Lib.Response.Controllers
+﻿namespace AutomotiveBrands.Lib.Response.Controllers
 {
     [ApiController]
     [Produces(MediaTypeNames.Application.Json)]
