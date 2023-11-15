@@ -1,4 +1,3 @@
-global using AutomotiveBrands.Lib.ApiVersion.Infrastructure.Constants;
 global using AutomotiveBrands.Lib.ApiVersion.Infrastructure.Settings;
 global using Microsoft.AspNetCore.Http;
 global using Microsoft.AspNetCore.Mvc;
@@ -7,3 +6,4 @@ global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.DependencyInjection.Extensions;
 global using Microsoft.Extensions.Options;
+global using System.Net.Mime;
