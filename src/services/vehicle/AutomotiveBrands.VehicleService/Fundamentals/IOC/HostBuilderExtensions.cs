@@ -9,10 +9,11 @@
         /// <returns>type of web application builder</returns>
         internal static WebApplicationBuilder AddHostExtensions(this WebApplicationBuilder webApplicationBuilder)
         {
+            webApplicationBuilder.AddSeriLog(nameof(VehicleDbContext));
+
             webApplicationBuilder.Host.AddAppConfiguration();
             webApplicationBuilder.Host.AddServiceValidateScope();
             webApplicationBuilder.Host.AddShutdownTimeOut();
-            webApplicationBuilder.Host.AddSeriLog(webApplicationBuilder.Configuration.GetConnectionString(nameof(VehicleDbContext)));
 
             return webApplicationBuilder;
         }
