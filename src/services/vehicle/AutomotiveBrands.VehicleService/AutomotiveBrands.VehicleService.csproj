@@ -30,7 +30,7 @@
     <ProjectReference Include="..\..\..\libraries\apiversion\AutomotiveBrands.Lib.ApiVersion\AutomotiveBrands.Lib.ApiVersion.csproj" />
     <ProjectReference Include="..\..\..\libraries\documentation\AutomotiveBrands.Lib.Documentation\AutomotiveBrands.Lib.Documentation.csproj" />
     <ProjectReference Include="..\..\..\libraries\host\AutomotiveBrands.Lib.Host\AutomotiveBrands.Lib.Host.csproj" />
-    <ProjectReference Include="..\..\..\libraries\host\AutomotiveBrands.Lib.Performance\AutomotiveBrands.Lib.Performance.csproj" />
+    <ProjectReference Include="..\..\..\libraries\performance\AutomotiveBrands.Lib.Performance\AutomotiveBrands.Lib.Performance.csproj" />
     <ProjectReference Include="..\..\..\libraries\ratelimit\AutomotiveBrands.Lib.RateLimit\AutomotiveBrands.Lib.RateLimit.csproj" />
     <ProjectReference Include="..\..\..\libraries\security\AutomotiveBrands.Lib.Security\AutomotiveBrands.Lib.Security.csproj" />
     <ProjectReference Include="..\..\..\libraries\shared\AutomotiveBrands.Lib.Shared\AutomotiveBrands.Lib.Shared.csproj" />
