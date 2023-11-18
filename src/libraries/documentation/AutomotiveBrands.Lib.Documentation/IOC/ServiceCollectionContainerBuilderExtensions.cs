@@ -6,13 +6,12 @@
         /// Add swagger documentation
         /// </summary>
         /// <param name="services">type of built-in service collection interface</param>
-        /// <param name="isJwtSecurityScheme">is jwt security scheme</param>
         /// <param name="isBasicSecurityScheme">is basic security scheme</param>
         /// <seealso cref="https://swagger.io/"/>
         /// <returns>type of built-in service collection interface</returns>
         /// <exception cref="ArgumentNullException">when the service provider cannot be built</exception>
         /// <exception cref="InvalidOperationException">if your application settings file does not contain swagger configurations</exception>
-        public static IServiceCollection AddSwagger(this IServiceCollection services, bool isJwtSecurityScheme = false, bool isBasicSecurityScheme = false)
+        public static IServiceCollection AddSwagger(this IServiceCollection services, bool isBasicSecurityScheme = false)
         {
             IServiceProvider serviceProvider = services.BuildServiceProvider();
             ArgumentNullException.ThrowIfNull(serviceProvider, nameof(serviceProvider));
