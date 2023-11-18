@@ -9,7 +9,9 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="FluentValidation" Version="11.8.0" />
-    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
+    <PackageReference Include="MediatR" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="7.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
@@ -26,8 +28,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\libraries\apiversion\AutomotiveBrands.Lib.ApiVersion\AutomotiveBrands.Lib.ApiVersion.csproj" />
+    <ProjectReference Include="..\..\..\libraries\cache\AutomotiveBrands.Lib.Cache\AutomotiveBrands.Lib.Cache.csproj" />
     <ProjectReference Include="..\..\..\libraries\database\AutomotiveBrands.Lib.Database\AutomotiveBrands.Lib.Database.csproj" />
+    <ProjectReference Include="..\..\..\libraries\documentation\AutomotiveBrands.Lib.Documentation\AutomotiveBrands.Lib.Documentation.csproj" />
+    <ProjectReference Include="..\..\..\libraries\host\AutomotiveBrands.Lib.Host\AutomotiveBrands.Lib.Host.csproj" />
     <ProjectReference Include="..\..\..\libraries\shared\AutomotiveBrands.Lib.Shared\AutomotiveBrands.Lib.Shared.csproj" />
+    <ProjectReference Include="..\..\..\libraries\validation\AutomotiveBrands.Lib.Validation\AutomotiveBrands.Lib.Validation.csproj" />
   </ItemGroup>
 
   <ItemGroup>
