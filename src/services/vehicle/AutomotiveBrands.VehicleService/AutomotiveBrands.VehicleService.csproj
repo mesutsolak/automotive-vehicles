@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\libraries\apiversion\AutomotiveBrands.Lib.ApiVersion\AutomotiveBrands.Lib.ApiVersion.csproj" />
-    <ProjectReference Include="..\..\..\libraries\database\AutomotiveBrands.Lib.Database\AutomotiveBrands.Lib.Database.csproj" />
     <ProjectReference Include="..\..\..\libraries\documentation\AutomotiveBrands.Lib.Documentation\AutomotiveBrands.Lib.Documentation.csproj" />
     <ProjectReference Include="..\..\..\libraries\host\AutomotiveBrands.Lib.Host\AutomotiveBrands.Lib.Host.csproj" />
     <ProjectReference Include="..\..\..\libraries\host\AutomotiveBrands.Lib.Performance\AutomotiveBrands.Lib.Performance.csproj" />

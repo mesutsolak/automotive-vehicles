@@ -58,10 +58,15 @@
             return hostBuilder;
         }
 
-        public static IHostBuilder AddSeriLog(this IHostBuilder hostBuilder, string connectionString)
+        /// <summary>
+        /// Add serilog 
+        /// </summary>
+        /// <param name="connectionName">connection name</param>
+        /// <returns>type of built-in host builder interface</returns>
+        public static IHostBuilder AddSeriLog(this WebApplicationBuilder builder, string connectionName)
         {
             Logger log = new LoggerConfiguration()
-            .WriteTo.PostgreSQL(connectionString, "logs", needAutoCreateTable: true)
+            .WriteTo.PostgreSQL(builder.Configuration.GetConnectionString(nameof(connectionName)), "logs", needAutoCreateTable: true, schemaName: "dbo")
             .MinimumLevel.Information()
             .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
             .MinimumLevel.Override("System", LogEventLevel.Error)
@@ -69,7 +74,7 @@
             .Destructure.UsingAttributes()
             .CreateLogger();
 
-            return hostBuilder.UseSerilog(log);
+            return builder.Host.UseSerilog(log);
         }
 
         /// <summary>
