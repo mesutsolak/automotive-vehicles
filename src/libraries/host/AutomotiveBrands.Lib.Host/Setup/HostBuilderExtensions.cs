@@ -58,6 +58,20 @@
             return hostBuilder;
         }
 
+        public static IHostBuilder AddSeriLog(this IHostBuilder hostBuilder, string connectionString)
+        {
+            Logger log = new LoggerConfiguration()
+            .WriteTo.PostgreSQL(connectionString, "logs", needAutoCreateTable: true)
+            .MinimumLevel.Information()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
+            .MinimumLevel.Override("System", LogEventLevel.Error)
+            .Enrich.WithClientIp()
+            .Destructure.UsingAttributes()
+            .CreateLogger();
+
+            return hostBuilder.UseSerilog(log);
+        }
+
         /// <summary>
         /// Start project
         /// </summary>

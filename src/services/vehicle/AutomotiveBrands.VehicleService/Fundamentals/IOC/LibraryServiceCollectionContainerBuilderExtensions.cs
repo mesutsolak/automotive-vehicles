@@ -9,7 +9,9 @@
             services.AddApiBehaviorOptions();
             services.AddValidation<Program>();
 
-            //services.AddRedisService();
+            services.AddApiVersioningWithProvider(new CustomizedResponseProvider());
+            services.AddRateLimitConfiguration();
+            services.AddGzipResponseCompression();
 
             services.AddRouteSettings();
             services.AddSwagger(true);

@@ -1,5 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddHostExtensions();
 builder.Services.AddLibraries();
 builder.Services.AddMediatR();
 builder.Services.AddPostgreSqlServerDbContext<VehicleDbContext>(nameof(VehicleDbContext), false);
@@ -9,7 +10,7 @@ var app = builder.Build();
 await app.MigrateDatabaseAsync<VehicleDbContext>();
 
 app.UseApplicationMiddlewares();
-app.UseApplicationLifetimes();
+
 await VehicleDbContextSeed.SeedAsync(builder);
 
 app.Use(async (a, b) =>
