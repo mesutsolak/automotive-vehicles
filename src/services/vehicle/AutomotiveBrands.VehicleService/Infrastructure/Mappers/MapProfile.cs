@@ -9,7 +9,8 @@
 
         private void VehicleMaps()
         {
-             
+            CreateMap<Vehicle, VehicleListQueryResult>().ReverseMap();
+            CreateMap<VehicleDetail, VehicleDetailQueryResult>().ReverseMap();
         }
     }
 }

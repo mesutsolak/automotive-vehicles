@@ -1,6 +1,6 @@
-﻿namespace AutomotiveBrands.VehicleService.Infrastructure.Data.Entities.Vehicles
+﻿namespace AutomotiveBrands.VehicleService.Application.Queries.Vehicles.Detail
 {
-    public class VehicleDetail : BaseHistoricStatusEntity
+    public sealed record VehicleDetailQueryResult
     {
         public string ModelName { get; init; }
         public string ModelDescription { get; init; }
@@ -18,10 +18,6 @@
         public double MotorVehicleTax { get; init; }
         public double TrafficRegistrationOfficialFee { get; init; }
         public double TrafficRegistrationServiceFee { get; init; }
-
-        #region One-To-Many Relationships
         public int VehicleId { get; init; }
-        public Vehicle Vehicle { get; init; }
-        #endregion
     }
 }
