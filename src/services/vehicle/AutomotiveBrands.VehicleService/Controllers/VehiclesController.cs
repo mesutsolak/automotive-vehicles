@@ -13,17 +13,26 @@
         /// Araçları listeler
         /// </summary>
         /// <remarks>Markalara göre araç listeler</remarks>
-        /// <returns></returns>
-        /// <response code="401">Yetkisiz kullanıcı</response>
-        /// <response code="9001">İşlem başarılı</response>
-        /// <response code="9004">Sistem hatası</response>
+        /// <returns>Araçlar</returns>
 
         [HttpGet]
-        [ProducesResponseType(typeof(ResponseModel<List<VehicleListQueryResult>>), 9001)]
         public async Task<IActionResult> List([FromQuery] VehicleListQuery vehicleListQuery)
         {
             var vehicleListQueryResponse = await _mediator.Send(vehicleListQuery);
-            return Ok();
+            return Ok(vehicleListQueryResponse);
+        }
+
+        /// <summary>
+        /// Araç id'sine göre araç detaylarını listeler
+        /// </summary>
+        /// <remarks>Araç detaylarını listeler/remarks>
+        /// <returns>Araç detayları</returns>
+
+        [HttpGet]
+        public async Task<IActionResult> Detail([FromQuery] VehicleDetailQuery vehicleDetailQuery)
+        {
+            var vehicleDetailQueryResponse = await _mediator.Send(vehicleDetailQuery);
+            return Ok(vehicleDetailQueryResponse);
         }
     }
 }
