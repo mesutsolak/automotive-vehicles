@@ -4,30 +4,28 @@
     {
         private readonly IUserUnitOfWork _uow;
         private readonly ILogger<PreferenceListQueryHandler> _logger;
+        private readonly IWebHelper _webHelper;
 
         public PreferenceListQueryHandler(IServiceProvider serviceProvider)
         {
             _uow = serviceProvider.GetRequiredService<IUserUnitOfWork>();
             _logger = serviceProvider.GetRequiredService<ILogger<PreferenceListQueryHandler>>();
+            _webHelper = serviceProvider.GetRequiredService<IWebHelper>();
         }
 
         public async Task<ResponseModel<PreferenceListQueryResult>> Handle(PreferenceListQuery preferenceListQuery, CancellationToken cancellationToken)
         {
-            // ML.NET bakılcaktır.S
-            //var brandVehicles = await _uow.Preferences.GetAllAsync(x => x.Brand.Equals(vehicleListQuery.Brand));
+            var preference = await _uow.Preferences.GetAsync(x => x.IpAddress.Equals(_webHelper.IpAddress), o => o.OrderByDescending(p => p.RequestCount));
 
-            //if (brandVehicles.IsNullOrNotAny())
-            //{
-            //    _logger.LogWarning("@brand markasına göre araç listesi bulunamadı !", vehicleListQuery.Brand);
-            //    return ResponseModel<List<PreferenceListQueryResult>>.Fail("Araç listesi bulunamadı");
-            //}
+            if (preference is null)
+            {
+                _logger.LogWarning("@ipAddress ip adresli kullanıcının tercihleri bulunamadı !", _webHelper.IpAddress);
+                return ResponseModel<PreferenceListQueryResult>.Fail("Ip adresine ait bir tercih bulunamadı !");
+            }
 
-            //var vehicles = ObjectMapper.Mapper.Map<List<PreferenceListQueryResult>>(brandVehicles);
+            var preferenceListQueryResult = ObjectMapper.Mapper.Map<Preference, PreferenceListQueryResult>(preference);
 
-            //return ResponseModel<List<PreferenceListQueryResult>>.Success(vehicles);
-
-            return null;
-
+            return ResponseModel<PreferenceListQueryResult>.Success(preferenceListQueryResult);
         }
     }
 }
