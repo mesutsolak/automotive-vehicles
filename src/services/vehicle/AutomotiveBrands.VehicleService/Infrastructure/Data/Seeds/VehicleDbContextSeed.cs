@@ -43,7 +43,7 @@
                 if (retryForAvailability < 3)
                 {
                     retryForAvailability++;
-                    Log.Error(exception, "User servis geçici veri eklerken hata oluştu.");
+                    Log.Error(exception, "Araç servisine geçici veri eklerken hata oluştu.");
 
                     Thread.Sleep(2000);
                     await SeedAsync(webApplicationBuilder, retryForAvailability);

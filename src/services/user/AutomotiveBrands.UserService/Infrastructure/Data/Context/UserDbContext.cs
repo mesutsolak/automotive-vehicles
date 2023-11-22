@@ -1,8 +1,8 @@
-﻿namespace AutomotiveBrands.VehicleService.Infrastructure.Data.Context
+﻿namespace AutomotiveBrands.UserService.Infrastructure.Data.Context
 {
-    public sealed class VehicleDbContext : DbContext, IVehicleDbContext
+    public sealed class UserDbContext : DbContext, IUserDbContext
     {
-        public VehicleDbContext(DbContextOptions options) : base(options)
+        public UserDbContext(DbContextOptions options) : base(options)
         {
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
@@ -13,17 +13,15 @@
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
-        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<Preference> Preferences { get; set; }
 
-        public DbSet<VehicleDetail> VehicleDetails { get; set; }
-
-        public class VehicleContextDesignFactory : IDesignTimeDbContextFactory<VehicleDbContext>
+        public class UserDbContextDesignFactory : IDesignTimeDbContextFactory<UserDbContext>
         {
-            public VehicleContextDesignFactory()
+            public UserDbContextDesignFactory()
             {
             }
 
-            public VehicleDbContext CreateDbContext(string[] args)
+            public UserDbContext CreateDbContext(string[] args)
             {
                 string environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
                 var configurationRoot = new ConfigurationBuilder()
@@ -33,9 +31,9 @@
                    .Build();
 
                 DbContextOptionsBuilder dbContextOptionsBuilder = new();
-                dbContextOptionsBuilder.UseNpgsql(configurationRoot.GetConnectionString(nameof(VehicleDbContext)));
+                dbContextOptionsBuilder.UseNpgsql(configurationRoot.GetConnectionString(nameof(UserDbContext)));
 
-                return new VehicleDbContext(dbContextOptionsBuilder.Options);
+                return new UserDbContext(dbContextOptionsBuilder.Options);
             }
         }
     }
