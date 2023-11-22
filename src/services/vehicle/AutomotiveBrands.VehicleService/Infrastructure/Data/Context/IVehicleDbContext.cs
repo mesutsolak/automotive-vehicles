@@ -1,4 +1,4 @@
-﻿namespace AutomotiveAPI.VehicleService.Infrastructure.Data.Context
+﻿namespace AutomotiveBrands.VehicleService.Infrastructure.Data.Context
 {
     public interface IVehicleDbContext
     {

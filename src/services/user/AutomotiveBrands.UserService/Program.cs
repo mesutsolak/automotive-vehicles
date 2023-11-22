@@ -1,17 +1,29 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
+builder.AddHostExtensions();
+builder.Services.AddLibraries();
+builder.Services.AddMediatR();
+builder.Services.AddPostgreSqlServerDbContext<UserDbContext>(nameof(UserDbContext), false);
+builder.Services.AddRepositories();
+builder.Services.AddHelpers();
 
 var app = builder.Build();
+await app.MigrateDatabaseAsync<UserDbContext>();
 
-// Configure the HTTP request pipeline.
+app.UseApplicationMiddlewares();
 
-app.UseHttpsRedirection();
+await UserDbContextSeed.SeedAsync(builder);
 
-app.UseAuthorization();
+app.Use(async (a, b) =>
+{
+    try
+    {
+        await b();
+    }
+    catch (Exception ex)
+    {
+        Log.Error(ex, "");
+    }
+});
 
-app.MapControllers();
-
-app.Run();
+await app.StartProjectAsync();

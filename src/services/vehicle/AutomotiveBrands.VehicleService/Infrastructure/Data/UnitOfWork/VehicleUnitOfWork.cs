@@ -1,4 +1,4 @@
-﻿namespace AutomotiveAPI.UserService.Infrastructure.Data.UnitOfWork
+﻿namespace AutomotiveBrands.UserService.Infrastructure.Data.UnitOfWork
 {
     public sealed class VehicleUnitOfWork : BaseUnitOfWork, IVehicleUnitOfWork
     {
