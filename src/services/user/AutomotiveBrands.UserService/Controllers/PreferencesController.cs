@@ -41,7 +41,7 @@
         /// <remarks>Tercih güncelleme/remarks>
         /// <returns></returns>
 
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> Update(UpdatePreferenceCommand updatePreferenceCommand)
         {
             var updatePreferenceCommandResponse = await _mediator.Send(updatePreferenceCommand);

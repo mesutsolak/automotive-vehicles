@@ -1,0 +1,67 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/vehicles/list?brand={brand}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44389
+        }
+      ],
+      "UpstreamPathTemplate": "/api/gateway/vehicle?brand={brand}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/vehicles/detail?vehicleid={vehicleid}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44389
+        }
+      ],
+      "UpstreamPathTemplate": "/api/gateway/vehicledetail?vehicleid={vehicleid}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/preferences/list",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7133
+        }
+      ],
+      "UpstreamPathTemplate": "/api/gateway/preferences/list",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/preferences/add",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7133
+        }
+      ],
+      "UpstreamPathTemplate": "/api/gateway/preferences/add",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/preferences/update",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7133
+        }
+      ],
+      "UpstreamPathTemplate": "/api/gateway/preferences/update",
+      "UpstreamHttpMethod": [ "PUT" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44309/"
+  }
+}
