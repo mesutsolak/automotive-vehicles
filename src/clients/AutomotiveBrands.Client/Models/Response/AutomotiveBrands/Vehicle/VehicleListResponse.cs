@@ -1,6 +1,6 @@
-﻿namespace AutomotiveBrands.Client.ViewModels
+﻿namespace AutomotiveBrands.Client.Models.Response.AutomotiveBrands.Vehicle
 {
-    public sealed class ListViewModel
+    public sealed record VehicleListResponse
     {
         public BrandType Brand { get; init; }
         public string Name { get; init; }

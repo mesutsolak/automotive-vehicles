@@ -2,9 +2,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
 builder.Services.AddHostingSetting();
+builder.Services.AddAutomotiveBrandsSetting();
 builder.Services.AddBuiltInServices();
 builder.Services.AddHelpers();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddAutomotiveBrandsService();
 
 var app = builder.Build();
 
