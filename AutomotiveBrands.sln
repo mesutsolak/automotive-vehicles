@@ -77,6 +77,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "performance", "performance"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.Performance", "src\libraries\performance\AutomotiveBrands.Lib.Performance\AutomotiveBrands.Lib.Performance.csproj", "{B9893B98-B534-4005-8DFE-D91D1D8C938C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomotiveBrands.Client", "src\clients\AutomotiveBrands.Client\AutomotiveBrands.Client.csproj", "{9BD3D7C4-4AED-4798-943C-4337466BDC6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{B9893B98-B534-4005-8DFE-D91D1D8C938C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9893B98-B534-4005-8DFE-D91D1D8C938C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9893B98-B534-4005-8DFE-D91D1D8C938C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BD3D7C4-4AED-4798-943C-4337466BDC6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BD3D7C4-4AED-4798-943C-4337466BDC6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BD3D7C4-4AED-4798-943C-4337466BDC6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BD3D7C4-4AED-4798-943C-4337466BDC6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,6 +182,7 @@ Global
 		{F2785CFC-AC88-4542-8369-540BDDC5A62A} = {A5B15CB0-D2E2-4650-8709-986342F0202B}
 		{3A30D09A-1C12-4CCE-B4A6-3D5FEEA689F6} = {99CF4514-80C1-4C0C-8F85-E1018AD7517B}
 		{B9893B98-B534-4005-8DFE-D91D1D8C938C} = {3A30D09A-1C12-4CCE-B4A6-3D5FEEA689F6}
+		{9BD3D7C4-4AED-4798-943C-4337466BDC6F} = {BC2DF9FF-2B69-4793-9897-1E73AF50E9EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B08CEC2-8C2E-4B55-92D5-33D07DB7F418}
