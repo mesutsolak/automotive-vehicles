@@ -20,10 +20,5 @@
             services.TryAddScoped<IUserUnitOfWork, UserUnitOfWork>();
             services.TryAddScoped<IPreferenceRepository, PreferenceRepository>();
         }
-
-        internal static void AddHelpers(this IServiceCollection services)
-        {
-            services.TryAddScoped<IWebHelper, WebHelper>();
-        }
     }
 }

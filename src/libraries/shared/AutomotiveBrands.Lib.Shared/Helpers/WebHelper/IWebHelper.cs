@@ -1,4 +1,4 @@
-﻿namespace AutomotiveBrands.UserService.Infrastructure.WebHelpers
+﻿namespace AutomotiveBrands.Lib.Shared.Helpers.WebHelper
 {
     public partial interface IWebHelper
     {

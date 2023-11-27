@@ -1,0 +1,10 @@
+﻿global using AutomotiveBrands.Client.App.IOC;
+global using AutomotiveBrands.Client.App.Middlewares;
+global using AutomotiveBrands.Client.Infrastructure.Constants;
+global using AutomotiveBrands.Lib.Shared.Helpers.WebHelper;
+global using AutomotiveBrands.Lib.Shared.IOC;
+global using Microsoft.AspNetCore.Mvc;
+global using Newtonsoft.Json;
+global using System.Net;
+global using System.Net.Mail;
+global using System.Text;

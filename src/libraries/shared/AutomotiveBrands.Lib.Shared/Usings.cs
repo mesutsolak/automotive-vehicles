@@ -1,7 +1,16 @@
 ﻿global using AutomotiveBrands.Lib.Shared.Constants;
+global using AutomotiveBrands.Lib.Shared.Helpers.WebHelper;
+global using AutomotiveBrands.Lib.Shared.Settings;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.DependencyInjection.Extensions;
 global using Microsoft.Extensions.Hosting;
+global using Microsoft.Extensions.Options;
+global using Microsoft.Extensions.Primitives;
 global using System.ComponentModel;
 global using System.Globalization;
+global using System.Net;
 global using System.Reflection;
 global using System.Text.Json;
 global using System.Text.RegularExpressions;

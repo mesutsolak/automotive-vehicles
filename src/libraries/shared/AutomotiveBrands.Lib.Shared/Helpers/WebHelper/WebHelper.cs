@@ -1,11 +1,13 @@
-﻿namespace AutomotiveBrands.UserService.Infrastructure.WebHelpers
+﻿namespace AutomotiveBrands.Lib.Shared.Helpers.WebHelper
 {
     public partial class WebHelper : IWebHelper
     {
+        private readonly IHostingSetting _hostingSetting;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public WebHelper(IServiceProvider serviceProvider)
         {
+            _hostingSetting = serviceProvider.GetRequiredService<IHostingSetting>();
             _httpContextAccessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
         }
 
@@ -43,6 +45,10 @@
                 if (_httpContextAccessor.HttpContext.Request.Headers != null)
                 {
                     var forwardedHttpHeaderKey = "X-FORWARDED-FOR";
+                    if (!string.IsNullOrEmpty(_hostingSetting.ForwardedHttpHeader))
+                    {
+                        forwardedHttpHeaderKey = _hostingSetting.ForwardedHttpHeader;
+                    }
 
                     var forwardedHeader = _httpContextAccessor.HttpContext.Request.Headers[forwardedHttpHeaderKey];
                     if (!StringValues.IsNullOrEmpty(forwardedHeader))
