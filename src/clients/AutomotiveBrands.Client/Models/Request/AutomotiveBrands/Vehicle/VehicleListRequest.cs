@@ -3,5 +3,10 @@
     public sealed record VehicleListRequest
     {
         public BrandType Brand { get; init; }
+
+        public VehicleListRequest(BrandType brand)
+        {
+            Brand = brand;
+        }
     }
 }

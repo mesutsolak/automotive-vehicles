@@ -24,7 +24,7 @@
             return await _restService.PostApiResponseAsync<ResponseModel<PreferenceUpdateResponse>>(Clients.AutomotiveBrands, "updatePreference", preferenceUpdateRequest);
         }
 
-        public async Task<ResponseModel<VehicleDetailResponse>> VehicleDetailAsync(VehicleDetailRequest vehicleDetailRequest)
+        public async Task<ResponseModel<List<VehicleDetailResponse>>> VehicleDetailAsync(VehicleDetailRequest vehicleDetailRequest)
         {
             var queryStringParameters = new Dictionary<string, string>
             {
@@ -33,7 +33,7 @@
 
             var serviceUri = QueryHelpers.AddQueryString("vehicledetail", queryStringParameters);
 
-            return await _restService.GetApiResponseAsync<ResponseModel<VehicleDetailResponse>>(Clients.AutomotiveBrands, serviceUri);
+            return await _restService.GetApiResponseAsync<ResponseModel<List<VehicleDetailResponse>>>(Clients.AutomotiveBrands, serviceUri);
         }
 
         public async Task<ResponseModel<List<VehicleListResponse>>> VehicleListAsync(VehicleListRequest vehicleListRequest)
