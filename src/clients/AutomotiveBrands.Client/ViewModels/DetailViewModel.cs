@@ -1,6 +1,6 @@
 ﻿namespace AutomotiveBrands.Client.ViewModels
 {
-    public class DetailViewModel
+    public sealed class DetailViewModel
     {
     }
 }

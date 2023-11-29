@@ -33,7 +33,7 @@
           "Port": 7133
         }
       ],
-      "UpstreamPathTemplate": "/api/gateway/preferences/list",
+      "UpstreamPathTemplate": "/api/gateway/preferences",
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
@@ -45,7 +45,7 @@
           "Port": 7133
         }
       ],
-      "UpstreamPathTemplate": "/api/gateway/preferences/add",
+      "UpstreamPathTemplate": "/api/gateway/addpreference",
       "UpstreamHttpMethod": [ "POST" ]
     },
     {
@@ -57,7 +57,7 @@
           "Port": 7133
         }
       ],
-      "UpstreamPathTemplate": "/api/gateway/preferences/update",
+      "UpstreamPathTemplate": "/api/gateway/updatepreference",
       "UpstreamHttpMethod": [ "PUT" ]
     }
   ],
