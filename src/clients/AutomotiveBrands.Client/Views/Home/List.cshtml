@@ -1,0 +1,23 @@
+﻿@model ListViewModel
+@{
+    ViewBag.Title = "Anasayfa";
+}
+
+<section class="price_list__list">
+    <div class="price_list__list_header">
+        <h1>@DateTime.Now.Year Fiyat Listesi</h1>
+    </div>
+    <div id="priceList" class="price_list">
+        @foreach (var item in Model.VehicleListResponses)
+        {
+            <a href="vehicleDetail/@item.Id" class="price_list__box">
+                <div class="price_list__logo_content">
+                    <img src="img/logo/@item.ImageName-logo.svg" class="logo-edit" alt="class-logo">
+                </div>
+                <div class="price_list__img_content">
+                    <img src="img/cross/@(item.ImageName).png" alt="class-cross">
+                </div>
+            </a>
+        }
+    </div>
+</section>

@@ -8,7 +8,7 @@
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=List}/{modelYear?}");
+                    pattern: "{controller=Home}/{action=List}/{brand=70}");
             });
         }
     }

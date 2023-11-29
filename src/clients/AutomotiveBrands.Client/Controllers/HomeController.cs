@@ -2,17 +2,33 @@
 {
     public sealed class HomeController : BaseController
     {
+        private readonly IAutomotiveBrandsService _automotiveBrandsService;
 
-
-        public HomeController()
+        public HomeController(IAutomotiveBrandsService automotiveBrandsService)
         {
-
+            _automotiveBrandsService = automotiveBrandsService;
         }
 
-        [Route("{modelYear:int?}")]
-        public async Task<IActionResult> List(int? modelYear)
+        public async Task<IActionResult> List(BrandType brand)
         {
-            return null;
+            var vehicleListResponse = await _automotiveBrandsService.VehicleListAsync(new VehicleListRequest(brand));
+
+            if (!vehicleListResponse.Succeeded)
+                return Redirect(Routes.Home);
+
+            return View(new ListViewModel(vehicleListResponse.Data));
+        }
+
+
+        [Route("vehicleDetail/{vehicleId:int}")]
+        public async Task<IActionResult> Detail(int vehicleId)
+        {
+            var vehicleDetailResponse = await _automotiveBrandsService.VehicleDetailAsync(new VehicleDetailRequest(vehicleId));
+
+            if (!vehicleDetailResponse.Succeeded)
+                return Redirect(Routes.Home);
+
+            return View(new DetailViewModel(vehicleDetailResponse.Data));
         }
     }
 }

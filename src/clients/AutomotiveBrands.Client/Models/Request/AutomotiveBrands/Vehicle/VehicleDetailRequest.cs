@@ -2,6 +2,11 @@
 {
     public sealed record VehicleDetailRequest
     {
+        public VehicleDetailRequest(int vehicleId)
+        {
+            VehicleId = vehicleId;
+        }
+
         public int VehicleId { get; init; }
     }
 }

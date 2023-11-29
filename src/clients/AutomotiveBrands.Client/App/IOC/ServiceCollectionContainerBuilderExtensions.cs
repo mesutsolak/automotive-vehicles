@@ -4,6 +4,7 @@
     {
         internal static IServiceCollection AddBuiltInServices(this IServiceCollection serviceCollection)
         {
+            serviceCollection.TryAddScoped<IRestService, RestService>();
             serviceCollection.TryAddScoped<IAutomotiveBrandsService, AutomotiveBrandsService>();
 
             return serviceCollection;
