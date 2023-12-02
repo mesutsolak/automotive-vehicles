@@ -2,14 +2,14 @@
 {
     public sealed class DetailViewModel
     {
-        public DetailViewModel(List<VehicleDetailResponse> vehicleListResponses, VehicleGetByIdResponse vehicleGetByIdResponse)
+        public DetailViewModel(Dictionary<string, List<VehicleDetailResponse>> vehicleListResponses, string imageName)
         {
             VehicleDetailResponses = vehicleListResponses;
-            VehicleGetByIdResponse = vehicleGetByIdResponse;
+            ImageName = imageName;
         }
 
-        public VehicleGetByIdResponse VehicleGetByIdResponse { get; set; }
+        public string ImageName { get; set; }
 
-        public List<VehicleDetailResponse> VehicleDetailResponses { get; init; }
+        public Dictionary<string, List<VehicleDetailResponse>> VehicleDetailResponses { get; init; }
     }
 }

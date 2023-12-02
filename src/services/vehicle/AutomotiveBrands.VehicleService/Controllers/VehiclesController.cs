@@ -52,5 +52,20 @@
             var vehicleGetByIdQueryResponse = await _mediator.Send(vehicleGetByIdQuery);
             return Ok(vehicleGetByIdQueryResponse);
         }
+
+        /// <summary>
+        /// Araç detail id'sine göre aracı detay bilgisini listeler
+        /// </summary>
+        /// <remarks>Araç detay bilgisini listeler/remarks>
+        /// <param name="vehicleGetByIdQuery">Araç detay id bilgisi</param>
+        /// <returns>Araç detay bilgisi</returns>
+        /// 
+
+        [HttpGet]
+        public async Task<IActionResult> GetByDetailId([FromQuery] VehicleGetByDetailIdQuery vehicleGetByDetailIdQuery)
+        {
+            var vehicleGetByDetailIdQueryResponse = await _mediator.Send(vehicleGetByDetailIdQuery);
+            return Ok(vehicleGetByDetailIdQueryResponse);
+        }
     }
 }

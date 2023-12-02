@@ -36,6 +36,18 @@
             return await _restService.GetApiResponseAsync<ResponseModel<List<VehicleDetailResponse>>>(Clients.AutomotiveBrands, serviceUri);
         }
 
+        public async Task<ResponseModel<VehicleGetByDetailIdResponse>> VehicleGetByDetailIdAsync(VehicleGetByDetailIdRequest vehicleGetByDetailIdRequest)
+        {
+            var queryStringParameters = new Dictionary<string, string>
+            {
+                { "vehicledetailid", vehicleGetByDetailIdRequest.VehicleDetailId.ToString() }
+            };
+
+            var serviceUri = QueryHelpers.AddQueryString("vehicledetail", queryStringParameters);
+
+            return await _restService.GetApiResponseAsync<ResponseModel<VehicleGetByDetailIdResponse>>(Clients.AutomotiveBrands, serviceUri);
+        }
+
         public async Task<ResponseModel<VehicleGetByIdResponse>> VehicleGetByIdAsync(VehicleGetByIdRequest vehicleGetByIdRequest)
         {
             var queryStringParameters = new Dictionary<string, string>

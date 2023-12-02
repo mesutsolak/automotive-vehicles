@@ -1,6 +1,6 @@
-﻿namespace AutomotiveBrands.VehicleService.Application.Queries.Vehicles.Detail
+﻿namespace AutomotiveBrands.Client.Models.Response.AutomotiveBrands.Vehicle
 {
-    public sealed record VehicleDetailQueryResult
+    public sealed class VehicleGetByDetailIdResponse
     {
         public int Id { get; set; }
         public string ModelName { get; init; }

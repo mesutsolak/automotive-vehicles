@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Detay";
 
-    var firstSubModel = Model.VehicleDetailResponses.First();
+    var firstSubModel = Model.VehicleDetailResponses.First().Value.First();
 }
 
 <section class="filter_content">
@@ -87,7 +87,7 @@
     <div class="price_list__detail">
         <div class="price_list__detail_model_info">
             <div class="model_logo">
-                @Model.VehicleGetByIdResponse.ImageName
+                @Model.ImageName
             </div>
             <div class="model_info">
                 <div class="model_name">
@@ -118,10 +118,12 @@
             <div class="owl-carousel owl-theme owl-loaded owl-drag">
                 <div class="owl-stage-outer">
                     <div class="owl-stage">
-                        @foreach (var subDetailModel in Model.VehicleDetailResponses)
+                        @foreach (var subDetailModels in Model.VehicleDetailResponses)
                         {
-                            var imagePath = $"/img/side/{subDetailModel.ImageName}.png";
-                            var checkedControl = @firstSubModel.Id == subDetailModel.Id ? "checked" : string.Empty;
+                            var foundSubDetailModel = subDetailModels.Value[0];
+
+                            var imagePath = $"/img/side/{foundSubDetailModel.ImageName}.png";
+                            var checkedControl = @firstSubModel.Id == foundSubDetailModel.Id ? "checked" : string.Empty;
 
                             <div class="owl-item">
                                 <div class="price_list__detail_box price_list__detail_model_select">
@@ -132,12 +134,15 @@
                                         <label class="radio_btn">
                                             <input type="radio" name="rdModel" @checkedControl>
                                             <span class="checkmark"></span><br><br>
-                                            <span class="rd_model_name">@subDetailModel.ModelName</span>
+                                            <span class="rd_model_name">@subDetailModels.Key</span>
                                         </label>
                                     </div>
                                     <div class="model_select">
                                         <select class="sub-models">
-                                            <option value="@subDetailModel.Id">@subDetailModel.ModelDescription</option>
+                                            @foreach (var subDetailModel in subDetailModels.Value)
+                                            {
+                                                <option value="@subDetailModel.Id">@subDetailModel.ModelDescription</option>
+                                            }
                                         </select>
                                     </div>
                                 </div>
