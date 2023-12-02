@@ -13,6 +13,18 @@
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
+      "DownstreamPathTemplate": "/api/vehicles/getbyid?vehicleid={vehicleid}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44389
+        }
+      ],
+      "UpstreamPathTemplate": "/api/gateway/vehiclegetbyid?vehicleid={vehicleid}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/vehicles/detail?vehicleid={vehicleid}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
