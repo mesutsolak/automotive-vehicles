@@ -24,6 +24,7 @@ global using AutomotiveBrands.Lib.Validation.IOC;
 global using AutomotiveBrands.UserService.Infrastructure.Data.UnitOfWork;
 global using AutomotiveBrands.VehicleService.Application.Pipelines;
 global using AutomotiveBrands.VehicleService.Application.Queries.Vehicles.Detail;
+global using AutomotiveBrands.VehicleService.Application.Queries.Vehicles.GetByDetailId;
 global using AutomotiveBrands.VehicleService.Application.Queries.Vehicles.GetById;
 global using AutomotiveBrands.VehicleService.Application.Queries.Vehicles.List;
 global using AutomotiveBrands.VehicleService.Fundamentals.IOC;
