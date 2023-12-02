@@ -2,6 +2,7 @@
 {
     public interface IAutomotiveBrandsService
     {
+        Task<ResponseModel<VehicleGetByIdResponse>> VehicleGetByIdAsync(VehicleGetByIdRequest vehicleGetByIdRequest);
         Task<ResponseModel<List<VehicleListResponse>>> VehicleListAsync(VehicleListRequest vehicleListRequest);
         Task<ResponseModel<List<VehicleDetailResponse>>> VehicleDetailAsync(VehicleDetailRequest vehicleDetailRequest);
         Task<ResponseModel<PreferenceAddResponse>> PreferenceAddAsync(PreferenceAddRequest preferenceAddRequest);

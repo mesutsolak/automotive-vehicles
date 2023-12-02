@@ -20,15 +20,20 @@
         }
 
 
-        [Route("vehicleDetail/{vehicleId:int}")]
+        [Route("vehicledetail/{vehicleId:int}")]
         public async Task<IActionResult> Detail(int vehicleId)
         {
+            var vehicleGetByIdResponse = await _automotiveBrandsService.VehicleGetByIdAsync(new VehicleGetByIdRequest(vehicleId));
+
+            if (!vehicleGetByIdResponse.Succeeded)
+                return Redirect(Routes.Home);
+
             var vehicleDetailResponse = await _automotiveBrandsService.VehicleDetailAsync(new VehicleDetailRequest(vehicleId));
 
             if (!vehicleDetailResponse.Succeeded)
                 return Redirect(Routes.Home);
 
-            return View(new DetailViewModel(vehicleDetailResponse.Data));
+            return View(new DetailViewModel(vehicleDetailResponse.Data, vehicleGetByIdResponse.Data));
         }
     }
 }

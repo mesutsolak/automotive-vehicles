@@ -1,5 +1,263 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model DetailViewModel
 @{
+    ViewBag.Title = "Detay";
+
+    var firstSubModel = Model.VehicleDetailResponses.First();
 }
+
+<section class="filter_content">
+    <div class="accordion" id="accordionFilter">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="ModelFilter">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ModelFiltercollapse" aria-expanded="false" aria-controls="ModelFiltercollapse">
+                    <span class="filter-close">Modeller</span>
+                    <span class="filter-open">Modeller</span>
+                </button>
+            </h2>
+            <div id="ModelFiltercollapse" class="accordion-collapse collapse" aria-labelledby="ModelFilter" data-bs-parent="#accordionFilter">
+                <div class="accordion-body">
+                    <form action="#" class="modelfinder-filter-j-form">
+                        <div class="audi-modelfinder__filter-form-fieldset">
+                            <div id="model" class="audi-modelfinder__filter-checkbox">
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="A3" name="option-bycarlinegroup" id="option-a3">
+                                    <label id="option-a3-label" for="option-a3" class="audi-filter-selector__label">A3</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="A4" name="option-bycarlinegroup" id="option-a4">
+                                    <label id="option-a4-label" for="option-a4" class="audi-filter-selector__label">A4</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="A5" name="option-bycarlinegroup" id="option-a5">
+                                    <label id="option-a5-label" for="option-a5" class="audi-filter-selector__label">A5</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="A6" name="option-bycarlinegroup" id="option-a6">
+                                    <label id="option-a6-label" for="option-a6" class="audi-filter-selector__label">A6</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="A7" name="option-bycarlinegroup" id="option-a7">
+                                    <label id="option-a7-label" for="option-a7" class="audi-filter-selector__label">A7</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="A8" name="option-bycarlinegroup" id="option-a8">
+                                    <label id="option-a8-label" for="option-a8" class="audi-filter-selector__label">A8</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="Q2" name="option-bycarlinegroup" id="option-q2">
+                                    <label id="option-q2-label" for="option-q2" class="audi-filter-selector__label">Q2</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="Q3" name="option-bycarlinegroup" id="option-q3">
+                                    <label id="option-q3-label" for="option-q3" class="audi-filter-selector__label">Q3</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="Q5" name="option-bycarlinegroup" id="option-q5">
+                                    <label id="option-q5-label" for="option-q5" class="audi-filter-selector__label">Q5</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="Q7" name="option-bycarlinegroup" id="option-q7">
+                                    <label id="option-q7-label" for="option-q7" class="audi-filter-selector__label">Q7</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="Q8" name="option-bycarlinegroup" id="option-q8">
+                                    <label id="option-q8-label" for="option-q8" class="audi-filter-selector__label">Q8</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="Q8-etron" name="option-bycarlinegroup" id="option-q8-etron">
+                                    <label id="option-q8-etron-label" for="option-q8-etron" class="audi-filter-selector__label">Q8 e-tron</label>
+                                </div>
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input" value="e-tron-gt" name="option-bycarlinegroup" id="option-etron-gt">
+                                    <label id="option-etron-label-gt" for="option-etron-gt" class="audi-filter-selector__label">e-tron GT</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="price_list__detail_content">
+    <div class="price_list__list_header">
+        <h1>Fiyat Detay</h1>
+    </div>
+    <div class="price_list__detail">
+        <div class="price_list__detail_model_info">
+            <div class="model_logo">
+                @Model.VehicleGetByIdResponse.ImageName
+            </div>
+            <div class="model_info">
+                <div class="model_name">
+                    @firstSubModel.ModelDescription
+                </div>
+                <div class="model_price">
+                    <span>Tavsiye Edilen Anahtar Teslim Fiyatı</span>
+                    <p class="model-price-text">@string.Format(StringFormats.DoublePrice, firstSubModel.Price)</p>
+                </div>
+                <div class="model-short-description">
+                    Ortalama yakıt tüketimi: <label class="model-fuel-combined">@firstSubModel.FuelConsumption</label> lt/100 km<br>
+                    Ortalama CO2 emisyonları: <label class="model-co2-emission">@firstSubModel.CO2</label>  g/km
+                </div>
+                <div class="detail_button">
+                    <div class="accordion" id="ModelDetail">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="ModelFilter">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ModelDetailcollapse" aria-expanded="false" aria-controls="ModelDetailcollapse">
+                                    Detaylı Bilgi
+                                </button>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="price_list__detail_box_content">
+            <div class="owl-carousel owl-theme owl-loaded owl-drag">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage">
+                        @foreach (var subDetailModel in Model.VehicleDetailResponses)
+                        {
+                            var imagePath = $"/img/side/{subDetailModel.ImageName}.png";
+                            var checkedControl = @firstSubModel.Id == subDetailModel.Id ? "checked" : string.Empty;
+
+                            <div class="owl-item">
+                                <div class="price_list__detail_box price_list__detail_model_select">
+                                    <div class="model_img">
+                                        <img src="@imagePath" alt="model-image">
+                                    </div>
+                                    <div class="model_radio">
+                                        <label class="radio_btn">
+                                            <input type="radio" name="rdModel" @checkedControl>
+                                            <span class="checkmark"></span><br><br>
+                                            <span class="rd_model_name">@subDetailModel.ModelName</span>
+                                        </label>
+                                    </div>
+                                    <div class="model_select">
+                                        <select class="sub-models">
+                                            <option value="@subDetailModel.Id">@subDetailModel.ModelDescription</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="detail-info">
+        <div class="accordion" id="ModelDetail">
+            <div id="ModelDetailcollapse" class="accordion-collapse collapse" aria-labelledby="ModelFilter" data-bs-parent="#ModelDetail">
+                <div class="accordion-body">
+                    <div class="model_detal_Paragraph">
+                        <table>
+                            <caption style="display: none">Model Detayları</caption>
+                            <thead style="display: none">
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="t_title">Model</td>
+                                    <td id="Adetail-model" style="">@firstSubModel.ModelDescription</td>
+                                </tr>
+                                <tr>
+                                    <td class="t_title">Motor</td>
+                                    <td id="Adetail-engine" style="">@firstSubModel.Engine</td>
+                                </tr>
+                                <tr>
+                                    <td class="t_title">Motor Hacmi</td>
+                                    <td id="Adetail-volume" style="">
+                                        <label class="Adetail-volume-text">
+                                            @string.Format(StringFormats.Centimeter, firstSubModel.EngineCapacity)
+                                        </label>
+                                        <sup>3</sup>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="t_title">Tavsiye Edilen Anahtar Teslim Fiyatı <sup>1/2/3/4/9</sup></td>
+                                    <td id="Adetail-msrp" style=""><span class="first-column">@string.Format(StringFormats.DoublePrice, firstSubModel.Price)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="t_title">Net Fiyat</td>
+                                    <td id="Adetail-net" style=""><span class="first-column">@string.Format(StringFormats.DoublePrice, firstSubModel.NetPrice)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="t_title">Ötv (%<span id="Adetail-otv-rate" style="">@firstSubModel.ExciseDutyRate</span>) <sup>6</sup></td>
+                                    <td id="Adetail-otv" style=""><span class="first-column">@string.Format(StringFormats.DoublePrice, firstSubModel.ExciseDuty)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="t_title">KDV (%20) <sup>6</sup></td>
+                                    <td id="Adetail-vat" style=""><span class="first-column">@string.Format(StringFormats.DoublePrice, firstSubModel.Vat)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="t_title">Motorlu Taşıtlar Vergisi <sup>6</sup></td>
+                                    <td id="Adetail-mtv" style="">@string.Format(StringFormats.NormalPrice, firstSubModel.MotorVehicleTax.ToString("N2", Cultures.Turkish))</td>
+                                </tr>
+                                <tr>
+                                    <td class="t_title">Trafik Tescil ve Ruhsat İşlemleri Resmi Bedeli <sup>6/7</sup></td>
+                                    <td id="Adetail-plate-expense" style="">@string.Format(StringFormats.NormalPrice, firstSubModel.TrafficRegistrationOfficialFee.ToString("N2", Cultures.Turkish))</td>
+                                </tr>
+                                <tr>
+                                    <td class="t_title">Trafik Tescil ve Ruhsat İşlemleri Hizmet Bedeli <sup>8</sup></td>
+                                    <td id="Adetail-service-expense" style="">@string.Format(StringFormats.NormalPrice, firstSubModel.TrafficRegistrationServiceFee.ToString("N2", Cultures.Turkish))</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="model_detal_Paragraph">
+                        <p>
+                            <small>1- Doğuş Otomotiv üretim, ithalat gibi nedenlere bağlı olarak aracın model, standart ve opsiyonel aksesuarlarında, teknik özelliklerinde ve fiyatlarında önceden haber vermeksizin değişiklik yapma hakkını saklı tutar.</small>
+                        </p>
+                        <p>
+                            <small>2- Tavsiye edilen bu anahtar teslim fiyat listesi @DateTime.Now.ToShortDateString() tarihinden itibaren geçerlidir. Listede belirtilen araçlar stoklarla sınırlıdır. Kesin sipariş verilmesi halinde ifa tarihinde yürürlükte olacak tavsiye edilen fiyat listesindeki fiyatlar geçerli olacaktır. Bu nedenle, aracın tavsiye edilen anahtar teslim fiyatı değişebilecektir.</small>
+                        </p>
+                        <p>
+                            <small>3- Burada belirtilen fiyatlar, standart donanımlı araçlara ait olup, opsiyonel ekipmanlar ayrıca fiyatlandırılır. Araca opsiyonel ekipman eklenmesi durumunda, 24 Eylül 2018 tarihli Resmi Gazete'de yayımlanan 4760 sayılı "Bazı Malların Özel Tüketim Vergisi Oranlarına Esas Özel Tüketim Vergisi Matrahlarının Yeniden Tespiti Hakkında Karar" uyarınca aracın Özel Tüketim Vergisi matrahı ve vergi oranı değişebilecektir. Vergi mevzuatından kaynaklanan bu değişiklik, aracın tavsiye edilen anahtar teslim fiyatına yansıtılacaktır.</small>
+                        </p>
+                        <p>
+                            <small>4- A4 Sedan – A4 Avant – A4 allroad modellerimiz WA4 – Premium Paket, A5 Coupe – A5 Cabrio – A5 Sportback modellerimiz WA4 – Konfor Paketi, A6 Sedan – A6 Avant – A6 allroad modellerimiz WA4 – Premium Paket ve WA5 – Teknoloji Paketi, A7 Sportback modelimiz WA4 – Prestige Paket, A8 L modelimiz WA4 – Business Paket, S3 Sedan – S3 Sportback – A3 Sedan S line – A3 Sportback S line modellerimiz WA4 – Premium Paket, Q2 modelimiz WC4 – Türkiye Paketi ve WA5 – Teknoloji Paketi, Q3 – Q3 Sportback modellerimiz WA4 – Premium Paket, Q5 – Q5 Sportback modellerimiz WC5 – Premium Paket, Q7 modelimiz WA4 – Prestige Paket, Q8 modelimiz WA5 – Premium Paket, e-tron – e-tron Sportback modellerimiz WA4 – Premium Paket, Q8 e-tron – Q8 e-tron Sportback modellerimiz WA4 – Premium Paket, e-tron GT– RS e-tron GT modellerimiz WA4 – Premium Paket donanımı içermektedir.</small>
+                        </p>
+                        <p>
+                            <small>5- Menşei: Almanya; A3 Sportback-A3 Sedan-A4-A4 Avant-A4 Allroad-A5 Coupe-A5 Sportback-A5 Cabrio-A8-A7 Sportback-A6-A6 Avant-A6 Allroad-R8 Coupe-R8 Spyder-Q2- e-tron GT- RS e-tron GT, Meksika: Q5–Q5 Sportback, Belçika; Q8 e-tron- Q8 e-tron Sportback, Slovakya; Q7-Q8, Macaristan; Q3- Q3 Sportback-TT Coupe-TT Roadster</small>
+                        </p>
+                        <p>
+                            <small>6- Tavsiye edilen anahtar teslim fiyat listesinde belirtilen,araca ilişkin her türlü vergi (ÖTV,KDV,MTV vb.), trafik tescil ve ruhsat işlemleri resmi bedelleri; A- resmi tarife değişikliklerine bağlı olarak değişiklik gösterebileceğinden, B- ÖTV oranları aracın ithalatı aşamasında döviz kurundaki değişiklikler sebebi ile KDV matrahı baz alınarak hesaplandığından, C- Yürürlükteki mevzuat uyarınca; a)ÖTV oranları içten yanmalı motora sahip araçlarda aracın motor silindir hacmi, elektrikli motora sahip araçlarda aracın elektrik motor gücü ve ÖTV matrahına göre değişebileceğinden, b)MTV tutarları içten yanmalı motora sahip araçlarda aracın motor silindir hacmi, elektrikli motora sahip araçlarda aracın elektrik motor gücü ve taşıt değerine göre değişebileceğinden,bu nedenlerle oluşabilecek fiyat farkı/farkları müşteri tarafından karşılanacaktır. Bu farklar aracın tavsiye edilen anahtar teslim fiyatına yansıtılacaktır.</small>
+                        </p>
+                        <p>
+                            <small>7- Trafik tescil ve ruhsat işlemleri resmi bedelleri plaka bedeli, ruhsat bedeli, ruhsat tescil bedeli ve damga vergisinden ibaret olup, bu bedeller müşteriye aittir. </small>
+                        </p>
+                        <p>
+                            <small>8- Trafik tescil ve ruhsat işlemleri müşteri tarafından veya müşterinin talebi halinde müşteriye vekaleten yetkili satıcı veya yetkili satıcının yetkilendireceği üçüncü şahıslar tarafından yapılabilmektedir. Müşterinin trafik tescil ve ruhsat işlemleri hizmetinin yetkili satıcı veya yetkili satıcının yetkilendireceği üçüncü şahıslar tarafından yapılmasını istemesi halinde, hizmet bedeli yetkili satıcı ile müşteri arasında belirlenir. Bu nedenle, trafik tescil ve ruhsat işlemleri hizmet bedeli yetkili satıcıdan yetkili satıcıya değişkenlik gösterebilir. </small>
+                        </p>
+                        <p>
+                            <small>9- Trafik sigorta poliçe bedeli yukarıda belirtilmiş olan tavsiye edilen anahtar teslim fiyatına dahil olmayıp, bu bedel müşteri tarafından ayrıca ödenecektir.</small>
+                        </p>
+                        <p>
+                            <small>10- Bu tavsiye edilen anahtar teslim fiyat listesinde belirtilen kur, fiyat listesinin yenisi yayınlanıncaya kadar sabit kur olarak uygulanmaktadır.</small>
+                        </p>
+                        <p>
+                            <small>11- Küresel anlamda yaşanan hammadde krizinden dolayı bazı modellerimizde zaman zaman tedarik sorunu yaşanabilmektedir, detaylı bilgi için Yetkili Satıcılarımıza başvurabilirsiniz.</small>
+                        </p>
+                        <p>
+                            <small>12- Ürün gamımızdaki modeller müşterilerin tercih ettiği opsiyonel ekipmanlarla getirilmekte olup, standart donanımlı araç sipariş edilmemektedir. Tercih edilen opsiyonel ekipmanlı modellerin fiyatları hakkında Yetkili Satıcılarımızdan bilgi alınabilir.</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

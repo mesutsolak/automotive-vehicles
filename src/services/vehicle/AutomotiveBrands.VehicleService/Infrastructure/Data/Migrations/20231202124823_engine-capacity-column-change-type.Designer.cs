@@ -3,6 +3,7 @@ using System;
 using AutomotiveBrands.VehicleService.Infrastructure.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AutomotiveBrands.VehicleService.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(VehicleDbContext))]
-    partial class VehicleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231202124823_engine-capacity-column-change-type")]
+    partial class enginecapacitycolumnchangetype
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,17 +95,17 @@ namespace AutomotiveBrands.VehicleService.Infrastructure.Data.Migrations
                         .IsUnicode(false)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<decimal>("EngineCapacity")
-                        .HasColumnType("numeric");
+                    b.Property<double>("EngineCapacity")
+                        .HasColumnType("double precision");
 
-                    b.Property<decimal>("ExciseDuty")
-                        .HasColumnType("numeric");
+                    b.Property<double>("ExciseDuty")
+                        .HasColumnType("double precision");
 
                     b.Property<int>("ExciseDutyRate")
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("FuelConsumption")
-                        .HasColumnType("numeric");
+                    b.Property<double>("FuelConsumption")
+                        .HasColumnType("double precision");
 
                     b.Property<string>("ImageName")
                         .IsRequired()
@@ -125,28 +128,28 @@ namespace AutomotiveBrands.VehicleService.Infrastructure.Data.Migrations
                         .IsUnicode(false)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<decimal>("MotorVehicleTax")
-                        .HasColumnType("numeric");
+                    b.Property<double>("MotorVehicleTax")
+                        .HasColumnType("double precision");
 
-                    b.Property<decimal>("NetPrice")
-                        .HasColumnType("numeric");
+                    b.Property<double>("NetPrice")
+                        .HasColumnType("double precision");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("numeric");
+                    b.Property<double>("Price")
+                        .HasColumnType("double precision");
 
-                    b.Property<decimal>("TrafficRegistrationOfficialFee")
-                        .HasColumnType("numeric");
+                    b.Property<double>("TrafficRegistrationOfficialFee")
+                        .HasColumnType("double precision");
 
-                    b.Property<decimal>("TrafficRegistrationServiceFee")
-                        .HasColumnType("numeric");
+                    b.Property<double>("TrafficRegistrationServiceFee")
+                        .HasColumnType("double precision");
 
                     b.Property<DateTime>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
                         .HasDefaultValueSql("now()");
 
-                    b.Property<decimal>("Vat")
-                        .HasColumnType("numeric");
+                    b.Property<double>("Vat")
+                        .HasColumnType("double precision");
 
                     b.Property<int>("VatRate")
                         .HasColumnType("integer");
