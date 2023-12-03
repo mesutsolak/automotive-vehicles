@@ -9,8 +9,7 @@
 
         private void UserMaps()
         {
-            CreateMap<Preference, CreatePreferenceCommand>().ReverseMap();
-            CreateMap<Preference, UpdatePreferenceCommand>().ReverseMap();
+            CreateMap<Preference, AddPreferenceCommand>().ReverseMap();
             CreateMap<Preference, PreferenceListQueryResult>().ReverseMap();
         }
     }

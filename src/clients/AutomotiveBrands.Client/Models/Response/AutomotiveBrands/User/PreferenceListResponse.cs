@@ -2,6 +2,6 @@
 {
     public sealed record PreferenceListResponse
     {
-        public int VehicleDetailId { get; init; }
+        public int VehicleId { get; init; }
     }
 }

@@ -2,6 +2,13 @@
 {
     public sealed record PreferenceAddRequest
     {
-        public int VehicleDetailId { get; init; }
+        public int VehicleId { get; init; }
+        public BrandType Brand { get; init; }
+
+        public PreferenceAddRequest(int vehicleId, BrandType brand)
+        {
+            VehicleId = vehicleId;
+            Brand = brand;
+        }
     }
 }

@@ -3,7 +3,8 @@
     public class Preference : BaseHistoricStatusEntity
     {
         public string IpAddress { get; set; }
-        public int VehicleDetailId { get; init; }
+        public BrandType Brand { get; set; }
+        public int VehicleId { get; init; }
         public int RequestCount { get; set; }
     }
 }

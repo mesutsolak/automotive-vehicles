@@ -14,6 +14,8 @@
             services.AddGzipResponseCompression();
 
             services.AddRouteSettings();
+            services.AddHostingSetting();
+            services.AddHelpers();
             services.AddSwagger(true);
         }
     }

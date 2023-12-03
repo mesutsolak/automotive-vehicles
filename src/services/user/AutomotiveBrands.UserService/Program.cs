@@ -5,7 +5,7 @@ builder.Services.AddLibraries();
 builder.Services.AddMediatR();
 builder.Services.AddPostgreSqlServerDbContext<UserDbContext>(nameof(UserDbContext), false);
 builder.Services.AddRepositories();
-builder.Services.AddHelpers();
+
 
 var app = builder.Build();
 await app.MigrateDatabaseAsync<UserDbContext>();

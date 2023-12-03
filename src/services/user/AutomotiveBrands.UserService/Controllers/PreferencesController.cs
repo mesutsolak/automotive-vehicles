@@ -29,23 +29,10 @@
         /// <returns></returns>
 
         [HttpPost]
-        public async Task<IActionResult> Add(CreatePreferenceCommand createPreferenceCommand)
+        public async Task<IActionResult> Add([FromBody] AddPreferenceCommand addPreferenceCommand)
         {
-            var createPreferenceCommandResponse = await _mediator.Send(createPreferenceCommand);
-            return Ok(createPreferenceCommandResponse);
-        }
-
-        /// <summary>
-        /// Tercih güncelleme
-        /// </summary>
-        /// <remarks>Tercih güncelleme/remarks>
-        /// <returns></returns>
-
-        [HttpPut]
-        public async Task<IActionResult> Update(UpdatePreferenceCommand updatePreferenceCommand)
-        {
-            var updatePreferenceCommandResponse = await _mediator.Send(updatePreferenceCommand);
-            return Ok(updatePreferenceCommandResponse);
+            var addPreferenceCommandResponse = await _mediator.Send(addPreferenceCommand);
+            return Ok(addPreferenceCommandResponse);
         }
     }
 }

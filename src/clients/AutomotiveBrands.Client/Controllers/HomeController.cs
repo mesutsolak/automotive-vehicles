@@ -1,6 +1,4 @@
-﻿using AutomotiveBrands.Lib.Shared.Constants;
-
-namespace AutomotiveBrands.Client.Controllers
+﻿namespace AutomotiveBrands.Client.Controllers
 {
     public sealed class HomeController : BaseController
     {
@@ -16,11 +14,24 @@ namespace AutomotiveBrands.Client.Controllers
             var vehicleListResponse = await _automotiveBrandsService.VehicleListAsync(new VehicleListRequest(brand));
 
             if (!vehicleListResponse.Succeeded)
-                return Redirect(Routes.Home);
+                return RedirectToAction(ActionNames.PageError, ControllerNames.Error);
+
+            var preferenceListResponse = await _automotiveBrandsService.PreferenceListAsync(new PreferenceListRequest(brand));
+
+            if (preferenceListResponse.Succeeded)
+            {
+                var foundVehicleListResponse = vehicleListResponse.Data.FirstOrDefault(x => x.Id == preferenceListResponse.Data.VehicleId);
+
+                if (foundVehicleListResponse is not null)
+                {
+                    vehicleListResponse.Data.Remove(foundVehicleListResponse);
+
+                    vehicleListResponse.Data.Insert(0, foundVehicleListResponse);
+                }
+            }
 
             return View(new ListViewModel(vehicleListResponse.Data));
         }
-
 
         [Route("vehicledetails/{vehicleId:int}")]
         public async Task<IActionResult> Detail(int vehicleId)
@@ -28,26 +39,31 @@ namespace AutomotiveBrands.Client.Controllers
             var vehicleGetByIdResponse = await _automotiveBrandsService.VehicleGetByIdAsync(new VehicleGetByIdRequest(vehicleId));
 
             if (!vehicleGetByIdResponse.Succeeded)
-                return Redirect(Routes.Home);
+                return RedirectToAction(ActionNames.PageError, ControllerNames.Error);
 
             var vehicleDetailResponse = await _automotiveBrandsService.VehicleDetailAsync(new VehicleDetailRequest(vehicleId));
 
             if (!vehicleDetailResponse.Succeeded)
-                return Redirect(Routes.Home);
+                return RedirectToAction(ActionNames.PageError, ControllerNames.Error);
+
+            var preferenceAddResponse = await _automotiveBrandsService.PreferenceAddAsync(new PreferenceAddRequest(vehicleId, BrandType.Audi));
+
+            if (!preferenceAddResponse.Succeeded)
+                return RedirectToAction(ActionNames.PageError, ControllerNames.Error);
 
             var groupedVehicles = vehicleDetailResponse.Data.GroupBy(car => car.ModelName)
-                       .ToDictionary(group => group.Key, group => group.ToList());
+                                  .ToDictionary(group => group.Key, group => group.ToList());
 
             return View(new DetailViewModel(groupedVehicles, vehicleGetByIdResponse.Data.ImageName));
         }
 
-        [Route("vehicledetail/{vehicleDetailId}")]
+        [Route("vehicledetail/{vehicleDetailId:int}")]
         public async Task<IActionResult> VehicleDetail(int vehicleDetailId)
         {
             var vehicleGetByDetailIdResponse = await _automotiveBrandsService.VehicleGetByDetailIdAsync(new VehicleGetByDetailIdRequest(vehicleDetailId));
 
             if (!vehicleGetByDetailIdResponse.Succeeded)
-                return Redirect(Routes.Home);
+                return RedirectToAction(ActionNames.PageError, ControllerNames.Error);
 
             return Json(new
             {

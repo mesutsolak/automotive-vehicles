@@ -15,7 +15,7 @@
 
         public async Task<ResponseModel<PreferenceListQueryResult>> Handle(PreferenceListQuery preferenceListQuery, CancellationToken cancellationToken)
         {
-            var preference = await _uow.Preferences.GetAsync(x => x.IpAddress.Equals(_webHelper.IpAddress), o => o.OrderByDescending(p => p.RequestCount));
+            var preference = await _uow.Preferences.GetAsync(x => x.IpAddress.Equals(_webHelper.IpAddress) && x.Brand.Equals(preferenceListQuery.Brand), o => o.OrderByDescending(p => p.RequestCount));
 
             if (preference is null)
             {
