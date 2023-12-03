@@ -16,12 +16,14 @@
 
         public async Task<ResponseModel<PreferenceListResponse>> PreferenceListAsync(PreferenceListRequest preferenceListRequest)
         {
-            return await _restService.GetApiResponseAsync<ResponseModel<PreferenceListResponse>>(Clients.AutomotiveBrands, "preferences");
-        }
+            var queryStringParameters = new Dictionary<string, string>
+            {
+                { "brand", preferenceListRequest.Brand.ToString() }
+            };
 
-        public async Task<ResponseModel<PreferenceUpdateResponse>> PreferenceUpdateAsync(PreferenceUpdateRequest preferenceUpdateRequest)
-        {
-            return await _restService.PostApiResponseAsync<ResponseModel<PreferenceUpdateResponse>>(Clients.AutomotiveBrands, "updatePreference", preferenceUpdateRequest);
+            var serviceUri = QueryHelpers.AddQueryString("preferences", queryStringParameters);
+
+            return await _restService.GetApiResponseAsync<ResponseModel<PreferenceListResponse>>(Clients.AutomotiveBrands, serviceUri);
         }
 
         public async Task<ResponseModel<List<VehicleDetailResponse>>> VehicleDetailAsync(VehicleDetailRequest vehicleDetailRequest)

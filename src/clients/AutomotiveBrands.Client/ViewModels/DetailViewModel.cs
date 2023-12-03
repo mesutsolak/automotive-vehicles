@@ -1,6 +1,6 @@
 ﻿namespace AutomotiveBrands.Client.ViewModels
 {
-    public sealed class DetailViewModel
+    public sealed record DetailViewModel
     {
         public DetailViewModel(Dictionary<string, List<VehicleDetailResponse>> vehicleListResponses, string imageName)
         {
@@ -8,7 +8,7 @@
             ImageName = imageName;
         }
 
-        public string ImageName { get; set; }
+        public string ImageName { get; init; }
 
         public Dictionary<string, List<VehicleDetailResponse>> VehicleDetailResponses { get; init; }
     }

@@ -10,6 +10,7 @@ global using AutomotiveBrands.Client.Models.Response.AutomotiveBrands.User;
 global using AutomotiveBrands.Client.Models.Response.AutomotiveBrands.Vehicle;
 global using AutomotiveBrands.Client.ViewModels;
 global using AutomotiveBrands.Lib.Response.Models;
+global using AutomotiveBrands.Lib.Shared.Constants;
 global using AutomotiveBrands.Lib.Shared.Enums;
 global using AutomotiveBrands.Lib.Shared.Helpers.WebHelper;
 global using AutomotiveBrands.Lib.Shared.IOC;

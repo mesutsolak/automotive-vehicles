@@ -2,7 +2,7 @@
 {
     public class ResponseModel<T>
     {
-        public bool Succeeded { get; set; }
+        public bool Succeeded { get; set; } = true;
         public T Data { get; init; }
         public List<string> Errors { get; init; }
 

@@ -8,14 +8,15 @@
 
             #region Properties
             builder.Property(p => p.Id).UseIdentityColumn();
+            builder.Property(p => p.Brand).IsRequired();
             builder.Property(p => p.IpAddress).HasMaxLength(100).IsUnicode(false).IsRequired();
-            builder.Property(p => p.VehicleDetailId).IsRequired();
+            builder.Property(p => p.VehicleId).IsRequired();
             builder.Property(p => p.RequestCount).IsRequired();
             #endregion
 
             #region Indexes
             builder.HasIndex(p => p.IpAddress).IsUnique(false);
-            builder.HasIndex(p => p.VehicleDetailId).IsUnique(false);
+            builder.HasIndex(p => p.VehicleId).IsUnique(false);
             #endregion
 
             #region Filter

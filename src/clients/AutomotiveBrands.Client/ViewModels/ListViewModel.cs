@@ -1,6 +1,6 @@
 ﻿namespace AutomotiveBrands.Client.ViewModels
 {
-    public sealed class ListViewModel
+    public sealed record ListViewModel
     {
         public ListViewModel(List<VehicleListResponse> vehicleListResponses)
         {
