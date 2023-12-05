@@ -2,14 +2,13 @@
 {
     public sealed record DetailViewModel
     {
-        public DetailViewModel(Dictionary<string, List<VehicleDetailResponse>> vehicleListResponses, string imageName)
+        public DetailViewModel(IEnumerable<string> modelNames,int vehicleId)
         {
-            VehicleDetailResponses = vehicleListResponses;
-            ImageName = imageName;
+            ModelNames = modelNames;
+            VehicleId = vehicleId;
         }
 
-        public string ImageName { get; init; }
-
-        public Dictionary<string, List<VehicleDetailResponse>> VehicleDetailResponses { get; init; }
+        public IEnumerable<string> ModelNames { get; init; }
+        public int VehicleId { get; init; }
     }
 }

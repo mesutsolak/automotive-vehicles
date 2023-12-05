@@ -2,8 +2,8 @@
 {
     public class ResponseModel<T>
     {
-        public bool Succeeded { get; set; } = true;
-        public T Data { get; init; }
+        public bool Succeeded { get; init; }
+        public T Data { get; set; }
         public List<string> Errors { get; init; }
 
         public static ResponseModel<T> Success(T data)
