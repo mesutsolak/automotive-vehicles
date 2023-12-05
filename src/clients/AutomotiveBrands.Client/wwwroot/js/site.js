@@ -1,4 +1,11 @@
-﻿$("#ModelDetail button").click(function () {
+﻿let vehicleTypes = [];
+let vehiclePrices = [];
+
+$(function () {
+    owlCarousel();
+});
+
+$("#ModelDetail button").click(function () {
     $('html,body').animate({
         scrollTop: $("#detail-info").offset().top
     },
@@ -38,20 +45,85 @@ $(document).on('change', "input[name='rdModel']", function () {
     $(this).closest("div").next().find(".sub-models option:first").prop('selected', true).trigger('change');
 });
 
-$('.owl-carousel').owlCarousel({
-    loop: false,
-    margin: 10,
-    nav: true,
-    dots: false,
-    responsive: {
-        0: {
-            items: 1
-        },
-        768: {
-            items: 2
-        },
-        1200: {
-            items: 3
-        }
+$(document).on("click", ".vehicle-type-filter", function () {
+    let isChecked = $(this).is(':checked');
+
+    let vehicleType = $(this).val();
+
+    if (isChecked) {
+        vehicleTypes.push(vehicleType);
     }
+    else {
+
+        let vehicleTypeIndex = vehicleTypes.indexOf(vehicleType);
+
+        if (vehicleTypeIndex === -1)
+            return;
+
+        vehicleTypes.splice(vehicleTypeIndex, 1);
+    }
+
+    applyFilter();
 });
+
+$(document).on("click", ".net-price-filter", function () {
+    let isChecked = $(this).is(':checked');
+
+    let vehiclePrice = $(this).val();
+
+    if (isChecked) {
+        vehiclePrices.push(vehiclePrice);
+    }
+    else {
+        let vehiclePriceIndex = vehiclePrices.indexOf(vehiclePrice);
+
+        if (vehiclePriceIndex === -1)
+            return;
+
+        vehiclePrices.splice(vehiclePriceIndex, 1);
+    }
+
+    applyFilter();
+});
+
+function applyFilter() {
+
+    let queryString = "";
+    let baseUrl = window.location.origin + "/partial/vehicledetail";
+    let vehicleIdQueryString = "?vehicleId=" + $("#vehicleid").val();
+
+    $.each(vehiclePrices, function (index, val) {
+        queryString += "&prices=" + val;
+    });
+
+    $.each(vehicleTypes, function (index, val) {
+        queryString += "&modelnames=" + val;
+    });
+
+    let url = baseUrl + vehicleIdQueryString + queryString
+
+    $.get(url, function (response) {
+        $("#vehicle-model-detail").html(response);
+        owlCarousel();
+    })
+}
+
+function owlCarousel() {
+    $('.owl-carousel').owlCarousel({
+        loop: false,
+        margin: 10,
+        nav: true,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            1200: {
+                items: 3
+            }
+        }
+    });
+}

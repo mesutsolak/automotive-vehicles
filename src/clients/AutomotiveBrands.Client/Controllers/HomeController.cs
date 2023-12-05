@@ -46,15 +46,10 @@
             if (!vehicleDetailResponse.Succeeded)
                 return RedirectToAction(ActionNames.PageError, ControllerNames.Error);
 
-            var preferenceAddResponse = await _automotiveBrandsService.PreferenceAddAsync(new PreferenceAddRequest(vehicleId, BrandType.Audi));
-
-            if (!preferenceAddResponse.Succeeded)
-                return RedirectToAction(ActionNames.PageError, ControllerNames.Error);
-
             var groupedVehicles = vehicleDetailResponse.Data.GroupBy(car => car.ModelName)
                                   .ToDictionary(group => group.Key, group => group.ToList());
 
-            return View(new DetailViewModel(groupedVehicles, vehicleGetByIdResponse.Data.ImageName));
+            return View(new DetailViewModel(groupedVehicles.Select(x => x.Key), vehicleId));
         }
 
         [Route("vehicledetail/{vehicleDetailId:int}")]
