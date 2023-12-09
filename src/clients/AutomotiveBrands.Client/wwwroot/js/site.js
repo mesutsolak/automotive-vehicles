@@ -1,5 +1,6 @@
 ﻿let vehicleTypes = [];
 let vehiclePrices = [];
+let spinnerVisible = false;
 
 $(function () {
     owlCarousel();
@@ -20,6 +21,8 @@ $(document).on('click change', '.sub-models', function () {
 
     let path = "/vehicledetail/" + $(this).val();
 
+    showProgress();
+
     $.get(path, function (data) {
         $(".model_name").html(data.modelDescription);
         $(".model-price-text").html(data.price);
@@ -38,6 +41,8 @@ $(document).on('click change', '.sub-models', function () {
         $("#Adetail-service-expense").html(data.trafficRegistrationServiceFee);
     }).done(function () {
         $("#loader-wrapper").hide();
+
+        hideProgress();
     });
 });
 
@@ -102,9 +107,12 @@ function applyFilter() {
 
     let url = baseUrl + vehicleIdQueryString + queryString
 
+    showProgress();
+
     $.get(url, function (response) {
         $("#vehicle-model-detail").html(response);
         owlCarousel();
+        hideProgress();
     })
 }
 
@@ -127,3 +135,19 @@ function owlCarousel() {
         }
     });
 }
+
+function showProgress() {
+    if (!spinnerVisible) {
+        $("span#spinner").addClass("is-active");
+        spinnerVisible = true;
+    }
+};
+
+function hideProgress() {
+    if (spinnerVisible) {
+        let spinner = $("span#spinner");
+        spinner.stop();
+        spinner.removeClass("is-active");
+        spinnerVisible = false;
+    }
+};
