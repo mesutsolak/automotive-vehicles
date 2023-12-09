@@ -64,7 +64,7 @@
             {
                 vehicleGetByDetailIdResponse.Data.ModelDescription,
                 Price = string.Format(StringFormats.DoublePrice, vehicleGetByDetailIdResponse.Data.Price),
-                vehicleGetByDetailIdResponse.Data.FuelConsumption,
+                FuelConsumption = vehicleGetByDetailIdResponse.Data.FuelConsumption.ToString(),
                 vehicleGetByDetailIdResponse.Data.CO2,
                 vehicleGetByDetailIdResponse.Data.Engine,
                 EngineCapacity = string.Format(StringFormats.Centimeter, vehicleGetByDetailIdResponse.Data.EngineCapacity),

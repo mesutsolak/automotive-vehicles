@@ -17,7 +17,10 @@
 <body>
     <div class="price_list__content">
         <header>
-            <a href="/"><img src="~/img/logo/audi-logo.svg" /></a>
+            <a href="https://audi.com.tr/">
+                <img src="~/img/logo/audi-logo.svg" />
+            </a>
+
             @if (Context.Request.Path.ToString() != Routes.Home)
             {
                 <a href="@Routes.Home" class="top_link">Modeller</a>
@@ -26,10 +29,9 @@
         @RenderBody()
     </div>
 
-    <div id="loader-wrapper" style="display: none;">
-        <div id="loader">
-        </div>
-    </div>
+    <span class="loader loader-default" id="spinner">
+        <span class="spinner-border spinner-border-sm align-middle ms-2 spinner-icon"></span>
+    </span>
 
     <script type="text/javascript" src="~/js/jquery-3.7.0.min.js"></script>
     <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
