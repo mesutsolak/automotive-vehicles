@@ -11,7 +11,7 @@
 
         public async Task<IActionResult> List(BrandType brand)
         {
-            var vehicleListResponse = await _automotiveBrandsService.VehicleListAsync(new VehicleListRequest(brand));
+            var vehicleListResponse = await _automotiveBrandsService.VehicleListAsync(new VehicleListRequest(brand, DateTime.Now.Year));
 
             if (!vehicleListResponse.Succeeded)
                 return RedirectToAction(ActionNames.PageError, ControllerNames.Error);

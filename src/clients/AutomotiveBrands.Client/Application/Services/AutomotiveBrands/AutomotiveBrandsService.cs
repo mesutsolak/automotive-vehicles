@@ -66,7 +66,8 @@
         {
             var queryStringParameters = new Dictionary<string, string>
             {
-                { "brand", vehicleListRequest.Brand.ToString() }
+                { "brand", vehicleListRequest.Brand.ToString() },
+                { "modelyear", vehicleListRequest.ModelYear.ToString() }
             };
 
             var serviceUri = QueryHelpers.AddQueryString("vehicle", queryStringParameters);
