@@ -8,14 +8,17 @@
         <h1>@DateTime.Now.Year Fiyat Listesi</h1>
     </div>
     <div id="priceList" class="price_list">
-        @foreach (var item in Model.VehicleListResponses)
+        @foreach (var vehicleListItem in Model.VehicleListResponses)
         {
-            <a href="vehicledetails/@item.Id" class="price_list__box">
+            var vehicleListItemIndex = Model.VehicleListResponses.IndexOf(vehicleListItem);
+            var activeClass = vehicleListItemIndex == 0 ? "card-active" : "";
+
+            <a href="vehicledetails/@vehicleListItem.Id" class="price_list__box @activeClass">
                 <div class="price_list__logo_content">
-                    <img src="img/logo/@item.ImageName-logo.svg" class="logo-edit" alt="class-logo">
+                    <img src="img/logo/@vehicleListItem.ImageName-logo.svg" class="logo-edit" alt="class-logo">
                 </div>
                 <div class="price_list__img_content">
-                    <img src="img/cross/@(item.ImageName).png" alt="class-cross">
+                    <img src="img/cross/@(vehicleListItem.ImageName).png" alt="class-cross">
                 </div>
             </a>
         }
