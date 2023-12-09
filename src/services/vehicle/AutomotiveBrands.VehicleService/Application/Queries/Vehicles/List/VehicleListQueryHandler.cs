@@ -13,7 +13,7 @@
 
         public async Task<ResponseModel<List<VehicleListQueryResult>>> Handle(VehicleListQuery vehicleListQuery, CancellationToken cancellationToken)
         {
-            var brandVehicles = await _uow.Vehicles.GetAllAsync(x => x.Brand.Equals(vehicleListQuery.Brand));
+            var brandVehicles = await _uow.Vehicles.GetAllAsync(x => x.Brand.Equals(vehicleListQuery.Brand) && x.ModelYear == vehicleListQuery.ModelYear);
 
             if (brandVehicles.IsNullOrNotAny())
             {
