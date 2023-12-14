@@ -1,0 +1,4 @@
+AutomotiveBrands.Client : 5163
+AutomotiveBrands.Gateway : 53491
+AutomotiveBrands.UserService : 5012
+AutomotiveBrands.VehicleService : 61785
