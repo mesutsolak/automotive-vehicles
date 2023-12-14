@@ -1,0 +1,11 @@
+global using AutomotiveBrands.Lib.Response.Models;
+global using AutomotiveBrands.VehicleService.Application.Queries.Vehicles.Detail;
+global using AutomotiveBrands.VehicleService.Application.Queries.Vehicles.GetByDetailId;
+global using AutomotiveBrands.VehicleService.Application.Queries.Vehicles.GetById;
+global using AutomotiveBrands.VehicleService.Application.Queries.Vehicles.List;
+global using AutomotiveBrands.VehicleService.Controllers;
+global using AutomotiveBrands.VehicleService.Test.Infrastructure;
+global using MediatR;
+global using Microsoft.AspNetCore.Mvc;
+global using Moq;
+global using Xunit;

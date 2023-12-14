@@ -1,0 +1,56 @@
+﻿@model DetailViewModel
+@{
+    ViewBag.Title = "Detay";
+}
+
+<input type="hidden" id="vehicleid" value="@Model.VehicleId" />
+
+<section class="filter_content">
+    <div class="accordion" id="accordionFilter">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="ModelFilter">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ModelFiltercollapse" aria-expanded="false" aria-controls="ModelFiltercollapse">
+                    <span class="filter-close">Modeller</span>
+                    <span class="filter-open">Modeller</span>
+                </button>
+            </h2>
+            <div id="ModelFiltercollapse" class="accordion-collapse collapse" aria-labelledby="ModelFilter" data-bs-parent="#accordionFilter">
+                <div class="accordion-body">
+                    <div class="audi-modelfinder__filter-form-fieldset">
+                        <div class="filter-title">
+                            Araç tipi
+                        </div>
+                        <div class="audi-modelfinder__filter-checkbox">
+                            @foreach (var modelName in Model.ModelNames)
+                            {
+                                <div class="modelfinder-filter-j-form-element">
+                                    <input type="checkbox" class="audi-filter-selector__input vehicle-type-filter" value="@modelName" name="option-bytype" id="option-@modelName">
+                                    <label id="option-@modelName-label" for="option-@modelName" class="audi-filter-selector__label audi-copy-m audi-j-clicktracking-element">@modelName</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="audi-modelfinder__filter-form-fieldset">
+                        <div class="filter-title">
+                            Net Fiyat
+                        </div>
+                        <div class="audi-modelfinder__filter-checkbox">
+                            <div class="modelfinder-filter-j-form-element">
+                                <input type="checkbox" class="audi-filter-selector__input net-price-filter" value="1000000" name="option-bytype" id="option-1m">
+                                <label id="option-1m-label" for="option-1m" class="audi-filter-selector__label audi-copy-m audi-j-clicktracking-element">1.000.000 TL</label>
+                            </div>
+                            <div class="modelfinder-filter-j-form-element">
+                                <input type="checkbox" class="audi-filter-selector__input net-price-filter" value="2000000" name="option-bytype" id="option-2m">
+                                <label id="option-2m-label" for="option-2m" class="audi-filter-selector__label audi-copy-m audi-j-clicktracking-element">2.000.000 TL</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="vehicle-model-detail">
+    @Html.Action("VehicleDetail","Partial", new SearchDetailModel { VehicleId = Model.VehicleId });
+</div>

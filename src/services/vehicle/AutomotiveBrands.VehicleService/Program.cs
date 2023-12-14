@@ -1,17 +1,28 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
+builder.AddHostExtensions();
+builder.Services.AddLibraries();
+builder.Services.AddMediatR();
+builder.Services.AddPostgreSqlServerDbContext<VehicleDbContext>(nameof(VehicleDbContext), false);
+builder.Services.AddRepositories();
 
 var app = builder.Build();
+await app.MigrateDatabaseAsync<VehicleDbContext>();
 
-// Configure the HTTP request pipeline.
+app.UseApplicationMiddlewares();
 
-app.UseHttpsRedirection();
+await VehicleDbContextSeed.SeedAsync(builder);
 
-app.UseAuthorization();
+app.Use(async (a, b) =>
+{
+    try
+    {
+        await b();
+    }
+    catch (Exception ex)
+    {
+        Log.Error(ex, "");
+    }
+});
 
-app.MapControllers();
-
-app.Run();
+await app.StartProjectAsync();
