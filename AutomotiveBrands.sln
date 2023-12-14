@@ -81,6 +81,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Lib.Perfor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomotiveBrands.Client", "src\clients\AutomotiveBrands.Client\AutomotiveBrands.Client.csproj", "{9BD3D7C4-4AED-4798-943C-4337466BDC6F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "azure", "azure", "{6E640F35-0F02-45F6-9605-DDCB27269443}"
+	ProjectSection(SolutionItems) = preProject
+		azure\azure-pipeline.yml = azure\azure-pipeline.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deployments", "deployments", "{50F4626B-550F-49C8-AB16-22CE14B64BB9}"
+	ProjectSection(SolutionItems) = preProject
+		deployments\.dockerignore = deployments\.dockerignore
+		deployments\docker-compose.override.yml = deployments\docker-compose.override.yml
+		deployments\docker-compose.yml = deployments\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{7EDCC20B-226A-4589-B6F2-A4FC78D58F84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "user", "user", "{31E1C3EC-11F6-4993-9C04-A7878FFD255C}"
+	ProjectSection(SolutionItems) = preProject
+		data\User\preference.txt = data\User\preference.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vehicle", "vehicle", "{15C88A28-345E-4256-8576-7D5AA0E79D4E}"
+	ProjectSection(SolutionItems) = preProject
+		data\Vehicle\vehicle.txt = data\Vehicle\vehicle.txt
+		data\Vehicle\vehicledetail.txt = data\Vehicle\vehicledetail.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -185,6 +210,8 @@ Global
 		{3A30D09A-1C12-4CCE-B4A6-3D5FEEA689F6} = {99CF4514-80C1-4C0C-8F85-E1018AD7517B}
 		{B9893B98-B534-4005-8DFE-D91D1D8C938C} = {3A30D09A-1C12-4CCE-B4A6-3D5FEEA689F6}
 		{9BD3D7C4-4AED-4798-943C-4337466BDC6F} = {BC2DF9FF-2B69-4793-9897-1E73AF50E9EB}
+		{31E1C3EC-11F6-4993-9C04-A7878FFD255C} = {7EDCC20B-226A-4589-B6F2-A4FC78D58F84}
+		{15C88A28-345E-4256-8576-7D5AA0E79D4E} = {7EDCC20B-226A-4589-B6F2-A4FC78D58F84}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B08CEC2-8C2E-4B55-92D5-33D07DB7F418}
