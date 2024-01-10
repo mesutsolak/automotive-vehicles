@@ -37,6 +37,16 @@
                 vehicleDetailResponse.Data = vehicleDetailResponse.Data.FindAll(x => searchDetailModel.Prices.Exists(y => x.Price >= y));
             }
 
+            if (!searchDetailModel.VatRates.IsNullOrNotAny())
+            {
+                vehicleDetailResponse.Data = vehicleDetailResponse.Data.FindAll(x => searchDetailModel.VatRates.Exists(y => x.VatRate >= y));
+            }
+
+            if (!searchDetailModel.ExciseDutyRates.IsNullOrNotAny())
+            {
+                vehicleDetailResponse.Data = vehicleDetailResponse.Data.FindAll(x => searchDetailModel.ExciseDutyRates.Exists(y => x.ExciseDutyRate >= y));
+            }
+
             var groupedVehicles = vehicleDetailResponse.Data.GroupBy(car => car.ModelName)
                                   .ToDictionary(group => group.Key, group => group.ToList());
 
