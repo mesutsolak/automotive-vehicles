@@ -1,5 +1,7 @@
 ﻿let vehicleTypes = [];
 let vehiclePrices = [];
+let vehicleVats = [];
+let vehicleExciseDuties = [];
 let spinnerVisible = false;
 
 $(function () {
@@ -91,6 +93,46 @@ $(document).on("click", ".net-price-filter", function () {
     applyFilter();
 });
 
+$(document).on("click", ".vat-filter", function () {
+    let isChecked = $(this).is(':checked');
+
+    let vehicleVat = $(this).val();
+
+    if (isChecked) {
+        vehicleVats.push(vehicleVat);
+    }
+    else {
+        let vehicleVatIndex = vehicleVats.indexOf(vehicleVat);
+
+        if (vehicleVatIndex === -1)
+            return;
+
+        vehicleVats.splice(vehicleVatIndex, 1);
+    }
+
+    applyFilter();
+});
+
+$(document).on("click", ".excise-duty-filter", function () {
+    let isChecked = $(this).is(':checked');
+
+    let vehicleExcideDuty = $(this).val();
+
+    if (isChecked) {
+        vehicleExciseDuties.push(vehicleExcideDuty);
+    }
+    else {
+        let vehicleExcideDutyIndex = vehicleExciseDuties.indexOf(vehicleExcideDuty);
+
+        if (vehicleExcideDutyIndex === -1)
+            return;
+
+        vehicleExciseDuties.splice(vehicleExcideDutyIndex, 1);
+    }
+
+    applyFilter();
+});
+
 function applyFilter() {
 
     let queryString = "";
@@ -103,6 +145,14 @@ function applyFilter() {
 
     $.each(vehicleTypes, function (index, val) {
         queryString += "&modelnames=" + val;
+    });
+
+    $.each(vehicleVats, function (index, val) {
+        queryString += "&vatrates=" + val;
+    });
+
+    $.each(vehicleExciseDuties, function (index, val) {
+        queryString += "&excisedutyrates=" + val;
     });
 
     let url = baseUrl + vehicleIdQueryString + queryString
